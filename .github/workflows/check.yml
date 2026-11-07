@@ -1,0 +1,24 @@
+name: Paket kontrolleri
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Fark yamasi testleri
+        run: python -m unittest discover -s tests -v
+      - name: PowerShell sozdizimi
+        shell: powershell
+        run: |
+          foreach ($file in @('Yama.ps1','Kur.ps1','Geri_Al.ps1')) {
+            $tokens = $null
+            $errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PWD $file),[ref]$tokens,[ref]$errors)
+            if ($errors.Count) { throw ($errors | Out-String) }
+          }
+      - name: Yama ve ceviri butunlugu
+        run: python tools/verify_release.py

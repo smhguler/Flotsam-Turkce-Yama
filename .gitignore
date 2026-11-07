@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.assets
+*.original
+*.bak
+*.tmp
+*.log
+.env
+.env.*
+dist/
+build/
+.venv/
+.DS_Store

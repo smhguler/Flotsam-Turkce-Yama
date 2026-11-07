@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "date": "2026-11-07",
+  "translation_entries": 3197,
+  "game_store": "Epic Games",
+  "unity_version": "6000.3.26f1",
+  "source_sha256": "2b8ed949fb1ada4d4f4af2b1dc10db9bd24df987826d0780600cc566d1170f71",
+  "source_size": 57332536,
+  "target_sha256": "00cafa58abb6dca798ffc16207143bc8985be06b5814dee48224a40f2f57f935",
+  "target_size": 57403448,
+  "patch_sha256": "79ef7d9377ad16aeabc48ac9ac1879f7bc4d03b2d54aef47397f5b58ac967808",
+  "patch_size": 321204
+}
